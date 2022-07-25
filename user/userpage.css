@@ -1,0 +1,36 @@
+body,head
+{
+	height:100%;
+	background-color:grey;
+	font-color:grey;
+	text-align: center;
+}
+.navigation
+{
+	background-color: #333;
+	overflow: hidden;
+}
+.navigation a
+{
+	width: 120px;
+	height: 40px;
+	float:left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 15px;
+	font-size: 17px;
+}
+input[type='submit'] {
+    width:110px;
+    height:30px;
+    border-radius:10px;
+}​
+#U_id,#F_name,#L_name,#Email,#Password,#Role,#Emergency,#Emergency_id
+{
+	border-radius: 10px;
+}
+label
+{
+	font-family: Arial;
+	font-weight: bold;
+}

@@ -1,0 +1,28 @@
+body
+{
+	background-color: #06BAD6;
+	text-align: center;
+	font-family:Georgia, 'Times New Roman', Times, serif;
+}
+button[type='submit'] {
+    width:70px;
+    height:30px;
+    border-radius:10px;
+}​
+input[name='city_name']
+{
+	border-radius:10px;
+}
+.bg_image
+{
+	background-image: url("platform_white.jpg");
+	height:100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+h1
+{
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: large;
+}

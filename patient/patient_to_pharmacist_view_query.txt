@@ -1,0 +1,6 @@
+CREATE VIEW patient_to_pharmacist(Order_id,P_id,D_id,P_name,D_name,date,Time,Amt,Medicine_name) AS 
+SELECT prescription.Order_id,patient.P_id,doctor.D_id,patient.Name,doctor.Name,pharmacist.date,pharmacist.Time,pharmacist.Amt,pharmacist.Medicine_name
+FROM pharmacist,patient,doctor,prescription
+WHERE pharmacist.Order_id=prescription.Order_id
+	AND patient.P_id=prescription.P_id
+    AND doctor.D_id=prescription.D_id;

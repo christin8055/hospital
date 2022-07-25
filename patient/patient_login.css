@@ -1,0 +1,18 @@
+body
+{
+	background-color :rgb(113, 170, 239);
+	text-align: center;
+}
+input
+{
+	border-radius: 10px;
+	background-color: rgb(215, 161, 242);
+	text-emphasis-color: rgb(221, 165, 237);
+}
+h1
+{
+	text-align: center;
+	font-family: cursive;
+	font-weight: 300;
+	font-style: oblique;
+}

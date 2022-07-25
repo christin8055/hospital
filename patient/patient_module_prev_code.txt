@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="patient_module.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<title>Patient </title>
+</head>
+	<body>
+    <div class="navigation">
+			<nav>
+				<div class="w3-top">
+					<div class="w3-bar">
+						<a href="#prescription">prescription</a>
+						&emsp;&emsp;&emsp;
+						<a href="#booked">booked</a>
+						&emsp;&emsp;&emsp;
+						<a href="#consulted_by">consulted_by</a>
+						&emsp;&emsp;&emsp;
+                        <a href="#insurance">insurance</a>
+						&emsp;&emsp;&emsp;
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div id="prescription" class="prescription">
+			<h1><bold>Prescription:</bold></h1>
+            <div class="presription_form">
+				<form method="post">
+					<label for="P_id">Patient ID: </label>
+					<input type="text" name="P_id" class="P_id">
+					<br><br>
+					<label for="D_id">Doctor ID: </label>
+					<input type="text" name="D_id" class="D_id">
+					<br><br>
+					<input type="submit" name="submit" value="submit">
+					<br><br>
+				</form>
+			</div>
+		</div>
+		<?php
+			$con=mysqli_connect("localhost","root","","hospital_db");
+			/*if($con)
+            {
+				echo "The connection is made<Br>";
+			}
+			else
+			{
+				echo "The connection is NOT made<Br>";	
+			}*/
+			if (isset($_POST['P_id'])) 
+			{
+				$P_id=$_POST['P_id'];
+				//echo $P_id;
+				echo "<br>";
+			}
+			if (isset($_POST['D_id']))
+            {
+                $D_id=$_POST['D_id'];
+                //echo $D_id;
+				echo "<br>";
+            
+            }
+
+			$result=mysqli_query($con,"SELECT * FROM prescription WHERE P_id='$P_id' AND D_id='$D_id'");
+			$rs=mysqli_fetch_array($result);
+			if(isset($rs))
+			{
+				echo "<br>The Order id for the given patient with the doctor is: ";
+				echo $rs['Order_id'];
+            }
+        ?>
+            <div id="booked" class="booked">
+			<h1><bold>Booked:</bold></h1>
+            <div class="booked_form">
+				<form method="post">
+					<label for="P_id">Patient ID: </label>
+					<input type="text" name="P_id" class="P_id">
+					<br><br>
+					<label for="D_id">Doctor ID: </label>
+					<input type="text" name="D_id" class="D_id">
+					<br><br>
+					<input type="submit" name="submit" value="submit">
+					<br><br>
+				</form>
+			</div>
+		</div>
+		<?php
+			$con=mysqli_connect("localhost","root","","hospital_db");
+			/*if($con)
+            {
+				echo "The connection is made<Br>";
+			}
+			else
+			{
+				echo "The connection is NOT made<Br>";	
+			}*/
+			if (isset($_POST['P_id'])) 
+			{
+				$P_id=$_POST['P_id'];
+				//echo $P_id;
+				echo "<br>";
+			}
+			if (isset($_POST['D_id']))
+            {
+                $D_id=$_POST['D_id'];
+                //echo $D_id;
+				echo "<br>";
+
+            }
+
+			$result=mysqli_query($con,"SELECT * FROM booked WHERE P_id='$P_id' AND D_id='$D_id'");
+			$rs=mysqli_fetch_array($result);
+			if(isset($rs))
+			{
+				echo "<br>The Apointment id for this patient with the doctor is: ";
+				echo $rs['A_id'];
+            }
+        ?>    
+            <div id="consulted_by" class="consulted_by">
+			<h1><bold>Consulted by:</bold></h1>
+            <div class="consulted_by_form">
+				<form method="post">
+					<label for="P_id">Patient ID: </label>
+					<input type="text" name="P_id" class="P_id">
+					<br><br>
+					
+					<input type="submit" name="submit" value="submit">
+					<br><br>
+				</form>
+			</div>
+		</div>
+		<?php
+			$con=mysqli_connect("localhost","root","","hospital_db");
+			/*if($con)
+            {
+				echo "The connection is made<Br>";
+			}
+			else
+			{
+				echo "The connection is NOT made<Br>";	
+			}*/
+			if (isset($_POST['P_id'])) 
+			{
+				$P_id=$_POST['P_id'];
+				
+				echo "<br>";
+			}
+			
+            
+
+			$result=mysqli_query($con,"SELECT * FROM consulted_by WHERE P_id='$P_id'");
+			$rs=mysqli_fetch_array($result);
+			if(isset($rs))
+			{
+				echo "<br>The Appointment id for the given patient with the doctor is: ";
+				echo $rs['D_id'];
+
+            }
+        ?>
+        <div id="insurance" class="insurance">
+			<h1><bold>Insurance:</bold></h1>
+            <div class="insurance_form">
+				<form method="post">
+					<label for="P_id">Patient ID: </label>
+					<input type="text" name="P_id" class="P_id">
+					<br><br>
+					
+					<input type="submit" name="submit" value="submit">
+					<br><br>
+				</form>
+			</div>
+		</div>
+		<?php
+			$con=mysqli_connect("localhost","root","","hospital_db");
+			if($con)
+            {
+				echo "The connection is made<Br>";
+			}
+			else
+			{
+				echo "The connection is NOT made<Br>";	
+			}
+			if (isset($_POST['P_id'])) 
+			{
+				$P_id=$_POST['P_id'];
+				
+				echo "<br>";
+			}
+			
+            
+
+			$result=mysqli_query($con,"SELECT * FROM insurance WHERE P_id='$P_id'");
+			$rs=mysqli_fetch_array($result);
+			if(isset($rs))
+			{
+				echo "<Br>Insurance id: ";
+				echo $rs['I_id'];
+				echo "<br>Expiry date: ";
+				echo $rs['exp_date'];
+				echo "<br>Amount: Rs.";
+				echo $rs['amt'];
+            }
+        ?> 
+
+
+    </body>
+</html>

@@ -1,0 +1,18 @@
+body
+{
+	background-color: #0279B8;
+	text-align: center;
+}
+#U_id,#F_name,#L_name,#Email,#Password,#Role,#Emergency,#Emergency_id
+{
+	border-radius: 10px;
+}
+label,h2
+{
+	font-family: cursive;
+}
+input[type="submit"]
+{
+	border-radius: 10px;
+	background-color: #72A875;
+}
